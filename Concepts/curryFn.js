@@ -55,4 +55,3 @@ const product2 = multiplyResult(2);   // Provide first argument '2'
 const product3 = product2(3);         // Provide second argument '3'
 const product4 = product3(4);         // Provide third argument '4'
 
-console.log(product4);  // Undefined, as the final function call logs inside 'multiply' and doesn't return a value
