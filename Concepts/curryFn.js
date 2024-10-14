@@ -30,21 +30,29 @@ const add5 = add3(5);
 
 // 2) Question: Write a curry function multiply that takes three arguments one by one and returns their product.
 //  For example, multiply(2)(3)(4) should return 24.
+// A normal function that takes three arguments and multiplies them
+// A normal function that takes three arguments and multiplies them
 function multiply(a, b, c) {
-  console.log(a * b * c);
+  console.log(a * b * c);  // Output the product of a, b, and c
 }
 
+// Curry function to convert 'multiply' into a curried version
 const curryMultiply = function(fn) {
-  return function (a) {
+  return function(a) {
     return function(b) {
       return function(c) {
-fn(a,b,c)
+        fn(a, b, c);  // Call the original multiply function with all three arguments
       }
     }
   }
 }
+
+// Creating a curried version of 'multiply'
 const multiplyResult = curryMultiply(multiply);
-const product2 = multiplyResult(2);
-const product3 = product2(3)
-const product4 = product3(4)
-console.log(product4)
+
+// Partially applying arguments one by one
+const product2 = multiplyResult(2);   // Provide first argument '2'
+const product3 = product2(3);         // Provide second argument '3'
+const product4 = product3(4);         // Provide third argument '4'
+
+console.log(product4);  // Undefined, as the final function call logs inside 'multiply' and doesn't return a value
