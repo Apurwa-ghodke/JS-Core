@@ -1,0 +1,68 @@
+
+1. async Attribute
+When you use the async attribute, the script is downloaded asynchronously with the 
+rest of the page. Once the script is fully downloaded, it will execute immediately,
+without waiting for the HTML parsing to finish.
+This can be useful for scripts that don’t depend on the DOM (Document Object Model) 
+or other scripts to run.
+
+2. defer Attribute
+The defer attribute also allows the script to be downloaded in parallel with the page 
+content. However, the script is only executed after the HTML parsing is completely
+done. This ensures that the script runs only after the DOM is ready, making it more
+predictable, especially if the script relies on the DOM.
+
+
+Differences Between async and defer:
+
+1. Execution Time:
+   - async: Executes as soon as the script is downloaded, possibly before the HTML is fully parsed.
+   - defer: Executes after the HTML is fully parsed.
+
+2. Order of Execution:
+   - async: Scripts are executed in the order they finish downloading, which can be out of order.
+   - defer: Scripts are executed in the order they appear in the HTML after the page is fully parsed.
+
+3. Use Case:
+   - async: Best for independent scripts that don’t rely on the DOM (e.g., analytics, ads).
+   - defer: Best for scripts that depend on the DOM or need to interact with the page elements.
+
+4. Rendering Blocking:
+   - async: May cause a pause in rendering when the script executes.
+   - defer: Does not block rendering; scripts run only after the page is fully parsed.
+
+---
+
+Pros and Cons of async:
+
+Pros:
+- Faster script execution: The script is executed as soon as it’s ready, improving performance for non-essential scripts.
+- Non-blocking: The browser doesn’t pause rendering to download the script.
+- Good for non-DOM dependent scripts: Best for external resources like ads, tracking, or analytics.
+
+Cons:
+- Unreliable execution order: If you have multiple async scripts, they may not run in the order you expect because they execute as soon as they finish downloading.
+- DOM dependencies can fail: If the script needs to interact with the DOM, it might run before the DOM is fully loaded, causing errors.
+
+---
+
+Pros and Cons of defer:
+
+Pros:
+- Maintains script order: Scripts with the defer attribute execute in the order they appear in the HTML document.
+- Non-blocking rendering: It doesn’t interrupt HTML parsing.
+- Ideal for DOM-dependent scripts: The script runs only after the DOM is fully parsed.
+
+Cons:
+- Slight delay in script execution: The script only runs after the entire document is parsed.
+- Less suitable for non-DOM scripts: async might provide slightly faster results for analytics or ads.
+
+---
+
+When to Use async vs. defer:
+
+1. Independent scripts like ads, analytics, or social media buttons - Use async.
+2. DOM-interactive scripts like event listeners, UI updates - Use defer.
+3. Multiple external scripts that must run in a specific order - Use defer.
+4. Single script without DOM dependency - Use async.
+5. Multiple independent scripts where execution order doesn’t matter - Use async.
