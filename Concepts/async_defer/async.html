@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Example</title>
+    <script async src="script1.js"></script>
+  </head>
+  <body>
+    <h1>Page content loads while the script is downloading...</h1>
+  </body>
+</html>
+<!-- !Explanation: 
+* The browser downloads script1.js in parallel while it continues to
+parse the HTML. 
+* When the download is finished, the script is executed
+immediately, which might pause the HTML parsing momentarily. -->

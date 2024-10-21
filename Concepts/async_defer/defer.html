@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defer Example</title>
+    <script defer src="script2.js"></script>
+  </head>
+  <body>
+    <h1>The script will only run after the HTML is fully loaded.</h1>
+  </body>
+</html>
+<!-- !Explanation 
+? script2.js is downloaded while the browser is still parsing the HTML.
+? The script only executes after the entire HTML document is completely parsed, ensuring that the DOM is ready.
+* Key Differences:
+? async: The script is downloaded and executed as soon as possible, possibly before the DOM is fully loaded.
+? defer: The script is downloaded in parallel but is executed only after the HTML parsing is complete.
+* When to Use Which:
+? Use async when the script is independent of the DOM (e.g., analytics scripts, advertisements).
+? Use defer when the script depends on the DOM (e.g., DOM manipulation scripts, event listeners). -->
