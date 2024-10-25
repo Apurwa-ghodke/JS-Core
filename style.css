@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* base style */
+body {
+    font-size: 62.55%;
+    color:beige;
+text-align: center;
+}
+h1,h2,h3,h4,h5,h6{
+    padding:1rem 0;
+}
+a {
+    color:#010101;
+}
+
+li {
+    list-style: none;
+   font-size: 1.2rem;
+}
+input {
+    padding:.8rem;
+ font-size: 1.2rem;
+}
+button {
+    outline: none;
+    border: none;
+    font-size: 1.25rem;
+    color:#010101;
+    background-color: blueviolet;
+   padding:  1.2rem 1.8rem;
+}
+button:hover {
+    border: 1px solid #fff;
+}
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+

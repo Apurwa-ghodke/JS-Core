@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation In Javascript</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body  {
+        display: grid;
+        place-items: center;
+        margin: 2rem auto;
+    }
+    #form {
+      max-width: 30rem;
+      padding: 0.5rem;
+      border: 2px solid #010101;
+      & h1 {
+        margin: 1.5rem auto;
+        }
+        & span {
+          font-size: 1.1rem;
+          padding-right: 0.5rem;
+          & input {
+            font-size: 1rem;
+            padding: 0.5rem 0.8rem;
+            margin: 0.5rem auto;
+          }
+      }
+    }
+    #input-item {
+        padding: .67rem 1rem;
+        font-size: .95rem;
+        margin: .8rem auto;
+    }
+    .Ex-2 {
+        border:1px solid #010101;
+        max-width: 20rem;
+   min-height: auto;
+   margin-top: 2rem;
+   padding: 1.2rem auto;
+    }
+    h3 {
+        font-size: 1.5rem;
+        margin:.8rem auto;
+    }
+
+    button  {
+        font-size: .8rem;
+        padding: .8rem .5rem;
+        outline: none;
+        border: 1px solid #111;
+      background: #f2f2f2;
+      color:#010101;
+      margin: .5rem auto;
+    }
+    ul {
+        list-style: decimal;
+    padding: .5rem auto;
+    margin: .8rem auto;
+}
+li {
+        text-align: center;
+font-size: 1.2rem;
+margin: .45rem auto;
+    }
+  </style>
+  <body>
+    <form id="form">
+      <h1>Event Delegation In Javascript</h1>
+      <span>
+        Name - :<input
+          type="text"
+          id="name"
+          placeholder="Enter Your Name"
+          data-uppercase
+        />
+      </span>
+      <span>
+        Email - :<input
+          type="email"
+          id="email"
+          placeholder="Enter Your Email"
+        />
+      </span>
+      <span>
+        Phone No -:
+        <input
+          type="number"
+          id="phoneNo"
+          max="10"
+          placeholder="Enter Your Phone Number"
+        />
+      </span>
+      <button type="submit">Submit</button>
+    </form>
+
+<!-- * Example - 2 Scenario:
+? Suppose you have a button that dynamically adds new list items (<li> elements) to a <ul>. You want 
+? to handle the click event for each list item, including the ones added after the page load, by using event delegation. -->
+<div class="Ex-2">
+    <h3>Example - 2 Event Delegations</h3>
+    <input type="text" id="input-item" placeholder="Enter List Item Here">
+    <button id = "add-items">Add Items</button>
+    <ul id="item-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+</div>
+
+    <script src="./event_delegation.js"></script>
+  </body>
+</html>
