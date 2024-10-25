@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Event Capturing and Event bubbling in Javascript</title>
+    <style>
+      body {
+        margin: 5rem 0;
+        display: grid;
+        place-items: center;
+      }
+      div {
+        border: 2px solid red;
+        min-width: 25rem;
+        padding: 2.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Bubbling Phase</h1>
+    <div id="grandParent">
+      GrandParent
+      <div id="parent">
+        Parent
+        <div id="child">Child</div>
+      </div>
+    </div>
+    <h1>Event Capturing Phase</h1>
+    <div id="outer">
+      OuterMost Div
+      <div id="inner">Inner Div
+        <div id="innerMost">InnerMost Div</div>
+      </div>
+    </div>
+    <script src="./event_buble.js"></script>
+    <script src="./event_capture.js"></script>
+  </body>
+</html>
